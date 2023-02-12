@@ -13,10 +13,10 @@ const isDev = env === 'dev';
 
 /** @type {import('esbuild').BuildOptions} */
 const options = {
-  entryPoints: [isDev ? resolve(__dirname, '../src/index.ts') : resolve(__dirname, '../src/index.ts')],
-  outfile: isDev ? resolve(__dirname, '../dist/bundle.dev.js') : resolve(__dirname, '../dist/bundle.prod.js'),
-  minify: isDev ? false : true,
-  sourcemap: isDev ? true : false,
+  entryPoints: [resolve(__dirname, '../src/index.ts')],
+  outfile: resolve(__dirname, '../dist/bundle.dev.js'),
+  minify: false,
+  sourcemap: true,
 
   define: { 'process.env.NODE_ENV': `"${process.env.NODE_ENV}"` },
   target: 'es2022',
@@ -31,7 +31,7 @@ build(options)
     console.log('Build completed!');
     process.exit(0);
   })
-  .catch((error) => {
-    console.error(JSON.stringify(error, null, 2));
+  .catch((err) => {
+    console.error(err);
     process.exit(1);
   });
