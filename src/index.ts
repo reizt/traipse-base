@@ -1,6 +1,6 @@
 import { welcomeMessage } from './welcome';
 
-const projectName: string = 'TypeScript scaffolder';
+const projectName: string = 'TypeScript Starter';
 
 const message = welcomeMessage(projectName);
 

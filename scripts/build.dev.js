@@ -2,15 +2,6 @@ const pkg = require('../package.json');
 const { build } = require('esbuild');
 const { resolve } = require('path');
 
-const env = process.argv[2];
-const AVAILABLE_ENVS = ['dev', 'prod'];
-if (!AVAILABLE_ENVS.includes(env)) {
-  console.error('invalid env');
-  process.exit(1);
-}
-
-const isDev = env === 'dev';
-
 /** @type {import('esbuild').BuildOptions} */
 const options = {
   entryPoints: [resolve(__dirname, '../src/index.ts')],

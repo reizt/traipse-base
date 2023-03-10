@@ -5,7 +5,7 @@ const { resolve } = require('path');
 /** @type {import('esbuild').BuildOptions} */
 const options = {
   entryPoints: [resolve(__dirname, '../src/index.ts')],
-  outfile: resolve(__dirname, '../dist/bundle.prod.js'),
+  outfile: resolve(__dirname, '../dist/bundle.js'),
   minify: true,
   sourcemap: false,
 

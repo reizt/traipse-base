@@ -1,5 +1,4 @@
 import { welcomeMessage } from '#/welcome';
-import { describe, expect, test } from 'vitest';
 
 describe(welcomeMessage.name, () => {
   test('retuned message contains project name', () => {

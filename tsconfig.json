@@ -1,7 +1,6 @@
-/* Visit https://aka.ms/tsconfig to read more about this file */
 {
-  "include": ["src/**/*.ts"],
-  "exclude": ["node_modules", "dist", "scripts", "tmp"],
+  "include": ["src/**/*.ts", "./.eslintrc.yml"],
+  "exclude": ["node_modules", "tmp/**/*.ts", "dist"],
   "compilerOptions": {
     "target": "ES2022",
     "module": "Node16",
@@ -26,7 +25,7 @@
 
     // syntax
     "strict": true,
-    "importsNotUsedAsValues": "error",
+    "importsNotUsedAsValues": "remove",
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": false,
     "noUncheckedIndexedAccess": true,

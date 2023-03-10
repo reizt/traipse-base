@@ -4,17 +4,21 @@ env:
   es2022: true
   node: true
 ignorePatterns:
+  - /tmp/**/*
   - /node_modules/**/*
   - /dist/**/*
+  - /src/spec/**/*
+  - /*.js
+  - /jest.config.ts
   - /scripts/**/*.js
-  - /tmp/**/*
-  - /vitest.config.ts
+plugins:
+  - '@typescript-eslint'
+  - jest
 extends:
   - eslint:recommended
   - standard-with-typescript
   - prettier
-plugins:
-  - '@typescript-eslint'
+  - jest:recommended
 parser: '@typescript-eslint/parser'
 parserOptions:
   project: './tsconfig.json'
@@ -24,10 +28,18 @@ rules:
     - error
     - vars: all
       args: none
-      varsIgnorePattern: '^_'
-  react/display-name: off
-  '@typescript-eslint/explicit-function-return-type': off
+      varsIgnorePattern: ^__
   '@typescript-eslint/no-unnecessary-condition': error
+  '@typescript-eslint/explicit-function-return-type': off
+  '@typescript-eslint/consistent-type-definitions': off
+  '@typescript-eslint/no-misused-promises': off
+  '@typescript-eslint/no-non-null-assertion': off
+  '@typescript-eslint/no-unused-vars': off
+  '@typescript-eslint/no-invalid-void-type': off
+  '@typescript-eslint/array-type':
+    - error
+    - default: array
+      readonly: array
   '@typescript-eslint/restrict-template-expressions':
     - error
     - allowNumber: true
