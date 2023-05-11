@@ -25,15 +25,14 @@
 
     // syntax
     "strict": true,
-    "importsNotUsedAsValues": "remove",
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": false,
     "noUncheckedIndexedAccess": true,
     "allowUmdGlobalAccess": false,
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
-    "keyofStringsOnly": true,
     "noStrictGenericChecks": false,
-    "noUnusedLocals": true
+    "noUnusedLocals": true,
+    "verbatimModuleSyntax": true
   }
 }
