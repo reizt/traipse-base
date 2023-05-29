@@ -3,7 +3,7 @@
   "exclude": ["node_modules", "tmp/**/*.ts", "dist"],
   "compilerOptions": {
     "target": "ES2022",
-    "module": "Node16",
+    "module": "NodeNext",
     "moduleResolution": "node",
     "baseUrl": "./",
     "outDir": "dist",

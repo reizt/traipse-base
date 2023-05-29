@@ -1,7 +1,0 @@
-{
-  "watch": ["src"],
-  "ext": "ts",
-  "exec": "yarn build:dev && yarn start:dev",
-  "ignore": ["node_modules/**/*", "dist/**/*", "src/__test__/**/*"],
-  "delay": 0
-}

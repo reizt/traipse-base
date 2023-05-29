@@ -1,4 +1,3 @@
----
 root: true
 env:
   es2022: true
@@ -6,7 +5,7 @@ env:
 ignorePatterns:
   - /node_modules/**/*
   - /tmp/**/*
-  - /scripts/**/*.js
+  - /esbuild.js
 plugins:
   - '@typescript-eslint'
 extends:
@@ -26,7 +25,14 @@ rules:
       varsIgnorePattern: ^__
 
   # @typescript-eslint
-  '@typescript-eslint/no-unnecessary-condition': error
+  '@typescript-eslint/no-unused-vars':
+    - error
+    - args: none
+      varsIgnorePattern: ^__
+  '@typescript-eslint/array-type':
+    - error
+    - default: array
+      readonly: array
   '@typescript-eslint/restrict-template-expressions':
     - error
     - allowNumber: true
@@ -34,18 +40,11 @@ rules:
       allowAny: true
       allowNullish: false
       allowRegExp: true
+  '@typescript-eslint/no-unnecessary-condition': error
   '@typescript-eslint/explicit-function-return-type': off
   '@typescript-eslint/consistent-type-definitions': off
   '@typescript-eslint/no-misused-promises': off
   '@typescript-eslint/no-non-null-assertion': off
-  '@typescript-eslint/array-type':
-    - error
-    - default: array
-      readonly: array
-  '@typescript-eslint/no-unused-vars':
-    - error
-    - args: none
-      varsIgnorePattern: ^__
   '@typescript-eslint/no-invalid-void-type': off
   '@typescript-eslint/prefer-ts-expect-error': off
   '@typescript-eslint/consistent-type-imports': error
