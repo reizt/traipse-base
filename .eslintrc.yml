@@ -4,21 +4,15 @@ env:
   es2022: true
   node: true
 ignorePatterns:
-  - /tmp/**/*
   - /node_modules/**/*
-  - /dist/**/*
-  - /src/spec/**/*
-  - /*.js
-  - /jest.config.ts
+  - /tmp/**/*
   - /scripts/**/*.js
 plugins:
   - '@typescript-eslint'
-  - jest
 extends:
   - eslint:recommended
   - standard-with-typescript
   - prettier
-  - jest:recommended
 parser: '@typescript-eslint/parser'
 parserOptions:
   project: './tsconfig.json'
@@ -59,6 +53,3 @@ rules:
   '@typescript-eslint/ban-ts-comment': off
   '@typescript-eslint/no-import-type-side-effects': error
   '@typescript-eslint/triple-slash-reference': off
-
-  # jest
-  jest/valid-title: off
