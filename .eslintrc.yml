@@ -3,21 +3,36 @@ env:
   es2022: true
   node: true
 ignorePatterns:
-  - /node_modules/**/*
-  - /tmp/**/*
-  - /esbuild.js
+  - /build.cjs
 plugins:
   - '@typescript-eslint'
+  - unicorn
 extends:
   - eslint:recommended
   - standard-with-typescript
   - prettier
+  - plugin:unicorn/recommended
 parser: '@typescript-eslint/parser'
 parserOptions:
   project: './tsconfig.json'
 rules:
   # eslint
   semi: off
+  sort-keys:
+    - error
+    - asc
+    - caseSensitive: true
+      natural: false
+      minKeys: 2
+
+  # unicorn
+  unicorn/no-null: off
+  unicorn/prevent-abbreviations: off
+  unicorn/filename-case: off
+  unicorn/no-useless-undefined: off
+  unicorn/prefer-top-level-await: off
+  unicorn/prefer-module: off
+  unicorn/no-process-exit: off
 
   # @typescript-eslint
   '@typescript-eslint/array-type':
