@@ -18,12 +18,6 @@ parserOptions:
 rules:
   # eslint
   semi: off
-  sort-keys:
-    - error
-    - asc
-    - caseSensitive: true
-      natural: false
-      minKeys: 2
 
   # unicorn
   unicorn/no-null: off
@@ -33,6 +27,10 @@ rules:
   unicorn/prefer-top-level-await: off
   unicorn/prefer-module: off
   unicorn/no-process-exit: off
+  unicorn/no-negated-condition: off
+  unicorn/catch-error-name:
+    - error
+    - name: err
 
   # @typescript-eslint
   '@typescript-eslint/array-type':

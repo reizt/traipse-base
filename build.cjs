@@ -4,7 +4,7 @@ const { resolve } = require('path');
 
 /** @type {import('esbuild').BuildOptions} */
 const options = {
-  entryPoints: [resolve(__dirname, './src/index.ts')],
+  entryPoints: [resolve(__dirname, './src/tasks/launch-fastify.ts')],
   define: { 'process.env.NODE_ENV': `"${process.env.NODE_ENV}"` },
   target: 'es2022',
   platform: 'node',
